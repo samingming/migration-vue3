@@ -1,24 +1,15 @@
-# vue-demo
+# vue3 migration
 
-## Project setup
-```
-npm install
-```
+## 1. setup() 기반 코드 -> <script setup> 문법으로 변경
+-export default 불필요
+-setup() 함수 불필요
+-return {} 불필요
+-템플릿에서 자동으로 바인딩됨
+-코드량 감소 + 가독성 증가
+-성능 향상
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+---
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
