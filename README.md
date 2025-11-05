@@ -36,7 +36,7 @@ export default {
   methods: { shout(){ console.log(this.upper) } }
 }
 </script>
-
+```
 ---
 ###t 스크린샷
 <img width="1238" height="336" alt="E01-instance" src="https://github.com/user-attachments/assets/504cac02-9018-4d57-9a80-64a1409de960" />
