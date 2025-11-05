@@ -1,10 +1,16 @@
 ## Vue 2 → Vue 3 매핑 요약
 
-- 상태 관리: `data()` → `ref` / `reactive`
+- 상태 관리: `data()` → `ref()` / `reactive()`
 - 파생 데이터: `computed` 옵션 → `computed()` 함수
-- 메서드: `methods` 옵션 → `<script setup>` 내부 함수
+- 메서드: `methods` 옵션 → `<script setup>` 내부 함수로 정의
 - 감시자: `watch` 옵션 → `watch()` 함수
-- 라이프사이클 훅: `beforeDestroy/destroyed` → `onBeforeUnmount/onUnmounted`
+- 라이프사이클 훅:
+  - `beforeCreate / created` → (setup 실행 시점)
+  - `beforeMount / mounted` → `onBeforeMount / onMounted`
+  - `beforeUpdate / updated` → `onBeforeUpdate / onUpdated`
+  - `beforeDestroy / destroyed` → `onBeforeUnmount / onUnmounted`
+- props 선언: `props: { ... }` → `defineProps({ ... })`
+- 컴포넌트 등록: `components: { A }` → `import A from ...` 후 템플릿에서 바로 사용
 
 ---
 
@@ -38,7 +44,7 @@ export default {
 </script>
 ```
 ---
-###t 스크린샷
+### 스크린샷
 <img width="1238" height="336" alt="E01-instance" src="https://github.com/user-attachments/assets/504cac02-9018-4d57-9a80-64a1409de960" />
 <img width="1236" height="265" alt="E02-reactive" src="https://github.com/user-attachments/assets/cff0b774-fd55-41d9-91ec-da901d70d14e" />
 <img width="1238" height="317" alt="E03-binding" src="https://github.com/user-attachments/assets/5859e3dc-24bc-487b-b2b1-6bc03072e12e" />
