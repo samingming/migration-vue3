@@ -14,6 +14,7 @@
 export default {
   name: 'E07OptionsApi',
 
+  //  props 문법 동일
   props: {
     title: {
       type: String,
@@ -21,21 +22,24 @@ export default {
     }
   },
 
+  //  data() 문법 
   data() {
     return {
-      firstName: 'John',
-      lastName: 'Doe',
+      firstName: 'Saim',
+      lastName: 'Jeong',
       greetCount: 0,
       message: ''
     };
   },
 
+  //  computed 문법
   computed: {
     fullName() {
       return `${this.firstName} ${this.lastName}`;
     }
   },
 
+  //  methods 문법 
   methods: {
     greet() {
       this.greetCount++;
@@ -46,6 +50,7 @@ export default {
     }
   },
 
+  //  watch 문법 
   watch: {
     greetCount(newValue, oldValue) {
       console.log(`Greet count changed from ${oldValue} to ${newValue}`);
@@ -55,6 +60,7 @@ export default {
     }
   },
 
+  //  Vue3에서 lifecycle 이름만 일부 변경
   beforeCreate() {
     console.log('beforeCreate hook');
   },

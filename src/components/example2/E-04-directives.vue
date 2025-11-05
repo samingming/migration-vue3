@@ -29,44 +29,19 @@
     </div>
 
   </div>
-
-<!--
- directives
- 1. v-if
- 2. v-else
- 3. v-else-if
- 4. v-show
- 5. v-for
- 6. v-on
- 7. v-bind
- 8. v-model
- 9. v-slot
-10. v-text
-11. v-html
-12. v-pre
-13. v-cloak
-14. v-once
-15. v-is
-16. v-memo
- -->
 </template>
 
-<script>
-export default {
-  name: "E04Directives",
-  data() {
-    return {
-      isVisible: true,
-      items: [
-        { id: 1, name: "Item 1" },
-        { id: 2, name: "Item 2" },
-        { id: 3, name: "Item 3" },
-        { id: 4, name: "Item 4" },
-      ],
-      count: 0,
-    };
-  }
-};
+<script setup>
+import { ref } from 'vue'
+
+const isVisible = ref(true)
+const items = ref([
+  { id: 1, name: "vue3-1" },
+  { id: 2, name: "vue3-2" },
+  { id: 3, name: "vue3-3" },
+  { id: 4, name: "vue3-4" },
+])
+const count = ref(0)
 </script>
 
 <style scoped>
@@ -76,6 +51,5 @@ export default {
   margin: 0 auto;
   padding: 20px;
   grid-gap: 20px;
-
 }
 </style>
