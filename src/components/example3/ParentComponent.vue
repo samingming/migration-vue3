@@ -1,30 +1,21 @@
-<!-- ParentComponent.vue -->
 <template>
   <div>
     <ChildComponent
-        :message="parentMessage"
-        @custom-event="handleEvent"
+      :message="parentMessage"
+      @custom-event="handleEvent"
     />
   </div>
 </template>
 
-<script>
-import ChildComponent from './ChildComponent.vue';
+<script setup>
+import { ref } from 'vue'
+import ChildComponent from './ChildComponent.vue'
 
-export default {
-  name: "E05ParentComponent",
-  data() {
-    return {
-      parentMessage: 'Hello from parent'
-    };
-  },
-  methods: {
-    handleEvent(payload) {
-      console.log(payload);
-    }
-  },
-  components: {
-    ChildComponent
-  }
-};
+// 반응형 데이터
+const parentMessage = ref('Hello from parent(vue3 migration)')
+
+// 이벤트 핸들러
+function handleEvent(payload) {
+  console.log(payload)
+}
 </script>

@@ -1,16 +1,11 @@
 <template>
-  <div>Hello, {{ message }}</div>
+  <div>이것은 vue3모습입니다, {{ message }}</div>
 </template>
 
-<script>
-export default {
-  name: "E01Instance",
-  data() {
-    return {
-      message: "Vue!"
-    };
-  }
-};
+<script setup>
+import { ref } from 'vue'
+
+const message = ref('Vue3!')
 </script>
 
 <style scoped>
